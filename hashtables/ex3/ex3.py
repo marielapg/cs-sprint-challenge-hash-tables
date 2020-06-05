@@ -3,7 +3,9 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
-
+    cache = {}
+    for i in arrays: 
+        print(arrays)
     return result
 
 
