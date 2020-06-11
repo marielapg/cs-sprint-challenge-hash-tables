@@ -22,5 +22,4 @@ def reconstruct_trip(tickets, length):
     for i in range(length):
         route[i] = trip_dict.get(cur)
         cur = route[i]
-        # print('new cur', i, cur)
     return route
