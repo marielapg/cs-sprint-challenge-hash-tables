@@ -3,21 +3,11 @@ def has_negatives(a):
     YOUR CODE HERE
     """
     # Your code here
-    cache = {}
-
-    for i in a:
-        if i > 0:
-            if i in cache:
-                cache[i].append(i)
-            else:
-                cache[i] =[i]
-        else:
-            if -i in cache:
-                cache[-i].append(i)
-            else:
-                cache[-i] = [i]
-    result = [key for key, i in cache.items() if len(i)==2 and i[0] +i[1] == 0]
-
+    
+    result = []
+    for number in a:
+        if number < 0:
+            result.append(abs(number))
     return result
 
 

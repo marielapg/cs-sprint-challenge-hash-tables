@@ -10,12 +10,17 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
     # Your code here
-    cache = {}
+    trip_dict = {}
+
     route = [None] * length
-    for ticket in tickets:
-        if ticket.source == "NONE":
-            route[0] = ticket.destination
-        cache[ticket.source] = ticket.destination
-    for i in range(1, length):
-        route[i] = cache[route[i-1]]
+
+    for t in tickets:
+        trip_dict[t.source] = t.destination
+
+    cur = "NONE"
+
+    for i in range(length):
+        route[i] = trip_dict.get(cur)
+        cur = route[i]
+        # print('new cur', i, cur)
     return route
